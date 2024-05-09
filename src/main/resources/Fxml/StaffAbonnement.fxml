@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="790.0" prefWidth="1500.0" stylesheets="@../css/MyReclamation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.StaffController">
+   <children>
+      <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="23.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../Img/alpha-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Text fill="#4856d9" layoutX="648.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="My Client">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="nameStaff" layoutX="797.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" wrappingWidth="327.6051025390625">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <TilePane fx:id="tilePaneAbonnements" layoutX="153.0" layoutY="167.0" prefHeight="500.0" prefWidth="1176.0" styleClass="tile-pane" AnchorPane.bottomAnchor="123.0" AnchorPane.leftAnchor="153.0" AnchorPane.rightAnchor="147.80000000000018" />
+   </children>
+</AnchorPane>

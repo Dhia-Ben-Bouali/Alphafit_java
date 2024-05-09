@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="790.0" prefWidth="1500.0" stylesheets="@../css/ChartReclamation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FAController">
+   <children>
+      <ImageView fitHeight="786.0" fitWidth="1496.0" layoutX="-18.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="117.0">
+         <image>
+            <Image url="@../Img/89792.jpg" />
+         </image>
+      </ImageView>
+      <BarChart fx:id="barChart" layoutX="259.0" layoutY="189.0" prefHeight="499.0" prefWidth="1026.0" styleClass="bar-chart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="3.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="2.0">
+         <image>
+            <Image url="@../Img/alpha-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Text fill="#016a91" layoutX="634.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Reclamation Statistical" />
+   </children>
+</AnchorPane>

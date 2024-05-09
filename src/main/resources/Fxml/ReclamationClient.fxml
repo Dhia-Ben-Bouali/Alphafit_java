@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="790.0" prefWidth="1500.0" stylesheets="@../css/styleClient.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ReclamationClientController">
+   <children>
+      <VBox layoutX="108.0" layoutY="160.0" prefHeight="518.0" prefWidth="549.0" styleClass="form-container" AnchorPane.leftAnchor="100.0">
+         <children>
+            <HBox fx:id="hboxvalid" alignment="CENTER" prefHeight="42.0" prefWidth="508.0">
+               <children>
+                  <Label fx:id="labelvalide" alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="422.0" />
+               </children>
+            </HBox>
+            <Text fill="#666666" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="YOUR FEEDBACK" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="tuser" promptText="USER" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="410.0">
+                     <children>
+                        <DatePicker fx:id="tdate" promptText="DATE DE L'ICIDENT" />
+                        <Label fx:id="labeldate" prefHeight="22.0" prefWidth="330.0" text=".">
+                           <VBox.margin>
+                              <Insets left="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="306.0">
+                     <children>
+                        <TextField fx:id="tcontenu" alignment="BOTTOM_LEFT" promptText="CONTENU" />
+                        <Label fx:id="labelcontenu" prefHeight="22.0" prefWidth="366.0">
+                           <VBox.margin>
+                              <Insets left="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="508.0" spacing="20.0">
+               <children>
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#AjouterReclamation" styleClass="button-bar" text="ADD" />
+                  <Hyperlink fx:id="MyRecButton" onAction="#MyReclamation" text="My Reclamation" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Text fill="#016a91" layoutX="867.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Do you have any trouble ?">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="585.0" fitWidth="507.0" layoutX="798.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="187.0">
+         <image>
+            <Image url="@../Img/20-dark.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="170.0" fitWidth="170.0" layoutX="66.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../Img/alpha-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ButtonBar layoutX="149.0" layoutY="34.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="79.0" prefWidth="458.0" AnchorPane.topAnchor="35.0">
+        <buttons>
+          <Button mnemonicParsing="false" text="Contact" />
+            <Button mnemonicParsing="false" text="Shop" />
+            <Button mnemonicParsing="false" text="About" />
+            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="136.0" text="Home" />
+        </buttons>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </ButtonBar>
+   </children>
+</AnchorPane>
