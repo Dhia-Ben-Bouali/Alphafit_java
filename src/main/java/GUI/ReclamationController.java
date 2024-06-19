@@ -1,12 +1,10 @@
 package GUI;
 
-import Service.ServiceReclamation;
-import Util.BDConnexion;
-import com.alphafit.alphafit.Reclamation;
-import com.alphafit.alphafit.user;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
+
+import services.ServiceReclamation;
+
+import entite.Reclamation;
+import entite.user;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -35,6 +33,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
+import static services.ServiceReclamation.getIdUtilisateurParNom;
 
 public class ReclamationController implements Initializable {
     Connection con = null;
@@ -216,29 +215,9 @@ public class ReclamationController implements Initializable {
         return s;
     }
 
-
-    @FXML
-    void Navigate(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Fxml/ReclamationClient.fxml"));
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Client interface");
-        stage.show();
-    }
-
-
-    @FXML
-    void GestionAbonnement(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Fxml/Abonnement.fxml"));
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Gestion Abonnement");
-        stage.show();
-    }
-
     @FXML
     void ShowStats(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Fxml/ChartReclamation.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ChartReclamation.fxml"));
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Statistique");
@@ -310,39 +289,5 @@ public class ReclamationController implements Initializable {
     void highlightErrorFields(TextField textField) {
         textField.setStyle("-fx-border-color: red;");
     }
-
-
-    public static int getIdUtilisateurParNom(String nomUtilisateur) throws SQLException {
-        Connection con = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        int idUtilisateur = -1; // Valeur par défaut si l'utilisateur n'est pas trouvé
-
-        try {
-            con = BDConnexion.getcon();
-            String query = "SELECT id FROM user WHERE nom = ?";
-            st = con.prepareStatement(query);
-            st.setString(1, nomUtilisateur);
-            rs = st.executeQuery();
-
-            if (rs.next()) {
-                idUtilisateur = rs.getInt("id");
-            }
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (st != null) {
-                st.close();
-            }
-            if (con != null) {
-                con.close();
-            }
-        }
-
-        return idUtilisateur;
-    }
-
-
-
 }
+

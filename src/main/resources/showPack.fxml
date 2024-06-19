@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="790.0" prefWidth="1257.0" style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ShowPackController">
+   <children>
+      <Pane layoutX="435.0" layoutY="140.0" prefHeight="511.0" prefWidth="387.0">
+         <children>
+            <VBox prefHeight="566.0" prefWidth="387.0" style="-fx-background-color: #EAEEF4; -fx-background-radius: 15px;">
+               <children>
+                  <Pane prefHeight="55.0" prefWidth="387.0" style="-fx-background-color: #353A56; -fx-background-radius: 15px;">
+                     <children>
+                        <JFXButton fx:id="closeButton" contentDisplay="GRAPHIC_ONLY" layoutY="-1.0" onAction="#handleCloseButtonClick" prefHeight="55.0" prefWidth="58.0">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@imagess/img.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <Label layoutX="131.0" layoutY="12.0" prefHeight="31.0" prefWidth="125.0" text="Show Package" textFill="WHITE">
+                           <font>
+                              <Font name="Ebrima Bold" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="495.0" prefWidth="387.0" style="-fx-opacity: 1;">
+                     <children>
+                        <Label layoutX="42.0" layoutY="30.0" prefHeight="39.0" prefWidth="76.0" text="Name:">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="name" layoutX="156.0" layoutY="30.0" prefHeight="39.0" prefWidth="76.0" text="Service1">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="42.0" layoutY="111.0" prefHeight="39.0" prefWidth="94.0" text="Description:">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="description" layoutX="42.0" layoutY="163.0" strokeWidth="0.0" text="qrhsrhheugheoirguoijughuspàçtuhçoeithfdg qgriuy uq siruhg iuqsfg iu gu qigf g qysg qygr ygsdf qyrg qyg yqse" wrappingWidth="310.13665771484375">
+                           <font>
+                              <Font name="Ebrima" size="14.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="41.0" layoutY="72.0" prefHeight="39.0" prefWidth="76.0" text="Price:">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="price" layoutX="155.0" layoutY="72.0" prefHeight="39.0" prefWidth="76.0" text="666">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXListView fx:id="list" layoutX="42.0" layoutY="248.0" prefHeight="202.0" prefWidth="310.0" style="-fx-background-color: transparent;" />
+                        <Label layoutX="42.0" layoutY="215.0" prefHeight="39.0" prefWidth="94.0" text="Services:">
+                           <font>
+                              <Font name="Ebrima Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

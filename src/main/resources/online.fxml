@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="1300.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PaymentController">
+   <children>
+      <VBox alignment="CENTER" layoutX="341.0" layoutY="263.0" prefHeight="204.0" prefWidth="617.0" spacing="10.0">
+         <children>
+            <Button fx:id="payButton" onAction="#HandlePayButton" prefHeight="63.0" prefWidth="146.0" style="-fx-background-color: #000486; -fx-background-radius: 15px;" text="Pay" textFill="WHITE">
+               <font>
+                  <Font name="Ebrima Bold" size="22.0" />
+               </font></Button>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" />
+         </children>
+      </VBox>
+      <Text fill="#1c46c4" layoutX="317.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you want to proceed to Online Payment click on Pay." wrappingWidth="665.9999389648438">
+         <font>
+            <Font name="Ebrima Bold" size="25.0" />
+         </font></Text>
+   </children>
+</AnchorPane>

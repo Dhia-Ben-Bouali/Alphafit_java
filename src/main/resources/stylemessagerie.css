@@ -1,0 +1,42 @@
+.primary-color{
+    -fx-background-color: white;
+
+}
+
+.secondary-color{
+    -fx-background-color: #6cabe5;
+}
+.left-side-border{
+    -fx-background-color: #fff;
+    -fx-border-width: 0005;
+}
+
+.selected:hover{
+
+    -fx-background-color: #f4f6f5;
+
+}
+.vbox-rounded {
+    -fx-background-radius: 10; /* Rayon de courbure du fond */
+    -fx-border-radius: 20; /* Rayon de courbure du bord */
+    -fx-border-color: rgba(255, 255, 255, 0.73); /* Couleur de la bordure */
+    -fx-border-width: 1; /* Épaisseur de la bordure */
+}
+
+.calendar {
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+}
+
+
+.text-field {
+    -fx-background-color: white; /* Couleur de fond */
+    -fx-border-color: #ccc; /* Couleur de la bordure */
+    -fx-border-radius: 4px; /* Bord arrondi */
+}
+
+.color-picker  {
+    -fx-background-color: white; /* Couleur de fond */
+    -fx-border-color: #ccc; /* Couleur de la bordure */
+    -fx-border-radius: 4px; /* Bord arrondi */
+}

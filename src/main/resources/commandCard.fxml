@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CommandCardControllers">
+   <children>
+      <Pane onMouseClicked="#handleShowCommand" prefHeight="60.0" prefWidth="1155.0" style="-fx-background-color: white; -fx-background-radius: 15px; -fx-border-radius: 15px; -fx-border-color: grey; -fx-border-width: 2px;">
+         <children>
+            <Label fx:id="id" layoutX="34.0" layoutY="19.0" text="Id">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="date" layoutX="77.0" layoutY="19.0" text="Date">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="fname" layoutX="203.0" layoutY="19.0" text="First name">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lname" layoutX="335.0" layoutY="19.0" text="Last name">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="adr" layoutX="465.0" layoutY="19.0" text="Address">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="tel" layoutX="624.0" layoutY="19.0" text="Phone Number">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="total" layoutX="811.0" layoutY="19.0" text="Total">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="paytype" layoutX="913.0" layoutY="19.0" text="Payment type">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="validity" layoutX="1070.0" layoutY="19.0" text="Validity">
+               <font>
+                  <Font name="Ebrima Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</HBox>

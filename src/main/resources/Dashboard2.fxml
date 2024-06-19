@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1500.0" styleClass="principal" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DashboardController">
+   <children>
+      <VBox prefHeight="803.0" prefWidth="278.0">
+         <children>
+            <AnchorPane fx:id="side_ankerpane" prefHeight="790.0" prefWidth="278.0" styleClass="side_ankerpane" stylesheets="@style.css">
+               <children>
+                  <Pane layoutX="20.0" layoutY="151.0" prefHeight="78.0" prefWidth="238.0" styleClass="inner_pane" stylesheets="@style.css" onMouseClicked="#handleAdminPaneClick">
+                     <children>
+                        <ImageView fx:id="admin_img" fitHeight="67.0" fitWidth="71.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagess/218.png" />
+                           </image>
+                        </ImageView>
+
+                        <Label layoutX="81.0" layoutY="20.0" prefHeight="39.0" prefWidth="147.0" text="Admin Profile">
+                           <font>
+                              <Font name="Ebrima Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+
+                  <ImageView fx:id="logo" fitHeight="202.0" fitWidth="212.0" layoutX="38.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagess/logo.png" />
+                     </image>
+                  </ImageView>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="10.0" layoutY="263.0" prefHeight="496.0" prefWidth="267.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                     <content>
+                        <AnchorPane prefHeight="602.0" prefWidth="267.0" style="-fx-background-color: white">
+                           <children>
+                              <JFXButton fx:id="btn_menu113111" buttonType="RAISED" layoutX="4.0" layoutY="462.0" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Subscriptions List" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon43111" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" layoutX="4.0" layoutY="3.0" onAction="#handleServiceListButtonClick" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Services List" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon1" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu1" buttonType="RAISED" layoutX="4.100000381469727" layoutY="61.100006103515625" onAction="#handlePackageListButtonClick" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Packages List" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon2" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu2" buttonType="RAISED" layoutX="4.100000381469727" layoutY="122.10000610351562" onAction="#handleUsersListButtonClick" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Users List" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon3" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu11" buttonType="RAISED" layoutX="4.100000381469727" layoutY="180.10000610351562" onAction="#handleProductListButtonClick" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Products List" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon4" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu111" buttonType="RAISED" layoutX="4.100000381469727" layoutY="237.10000610351562" onAction="#handlecategorieListButtonClick" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Categories List" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon41" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu112" buttonType="RAISED" layoutX="4.100000381469727" layoutY="291.1000061035156" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Command List"  onAction="#handleCommandePaneClick" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon42" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu113" buttonType="RAISED" layoutX="4.100000381469727" layoutY="350.1000061035156" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Reclamation List" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon43" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu1131" buttonType="RAISED" layoutX="4.100000381469727" layoutY="406.1000061035156" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Consult rate" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon431" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu11312" buttonType="RAISED" layoutX="4.100000381469727" layoutY="406.1000061035156" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Gestion Reclamation" onAction="#handleReclamationClick" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon4311" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu11412" buttonType="RAISED" layoutX="4.100000381469727" layoutY="406.1000061035156" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench11" stylesheets="@style.css" text="Gestion Abonnement" onAction="#handleAbonnementClick" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fx:id="icon5311" fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagess/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btn_menu11311" buttonType="RAISED" layoutX="4.0" layoutY="515.0" onAction="#handleLogoutButtonClick" prefHeight="46.0" prefWidth="258.0" styleClass="btn_workbench_logout" stylesheets="@style.css" text="Log out" textFill="#009ef7">
+                                 <font>
+                                    <Font name="Ebrima Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </content></ScrollPane>
+                  <Line endX="100.0" fill="#ffffffb8" layoutX="139.0" layoutY="244.0" startX="-100.0" stroke="WHITE">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Line>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="contentArea" prefHeight="790.0" prefWidth="1257.0" styleClass="principal" stylesheets="@style.css" />
+   </children>
+</HBox>

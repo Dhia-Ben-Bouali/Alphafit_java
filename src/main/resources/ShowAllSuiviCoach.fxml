@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="790.0" prefWidth="1530.0" style="-fx-background-color: #13263C;" stylesheets="@stylemessagerie.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CalendarControllerCoach">
+   <children>
+      <Pane fx:id="addworkout" layoutX="872.8" layoutY="36.0" prefHeight="605.0" prefWidth="453.0" style="-fx-background-color: white; -fx-text-fill: white; -fx-background-radius: 20px; -fx-padding: 5px 10px;" AnchorPane.leftAnchor="872.8">
+         <children>
+            <TextField fx:id="tilteTF" layoutX="98.0" layoutY="56.0" prefHeight="38.0" prefWidth="286.0" promptText="Title" styleClass="text-field" stylesheets="@stylemessagerie.css" />
+            <TextField fx:id="descriptionTF" layoutX="99.0" layoutY="109.0" prefHeight="66.0" prefWidth="286.0" promptText="Description" />
+            <DatePicker fx:id="Date" layoutX="99.0" layoutY="201.0" prefHeight="27.0" prefWidth="286.0" promptText="Choose a date" />
+            <Spinner fx:id="startH" initialValue="0" layoutX="98.0" layoutY="246.0" max="59" min="0" prefHeight="26.0" prefWidth="61.0" />
+            <Label layoutX="17.0" layoutY="67.0" text="Title" textFill="#101010">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="125.0" text="Description" textFill="#131212">
+               <font>
+                  <Font name="Berlin Sans FB" size="16.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="204.0" text="Date">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font></Label>
+            <Spinner fx:id="startS" initialValue="0" layoutX="323.0" layoutY="244.0" max="59" min="0" prefHeight="26.0" prefWidth="61.0" />
+            <Spinner fx:id="startM" initialValue="0" layoutX="214.0" layoutY="245.0" max="59" min="0" prefHeight="26.0" prefWidth="61.0" />
+            <Spinner fx:id="end_H" initialValue="0" layoutX="97.0" layoutY="286.0" max="59" min="0" prefHeight="26.0" prefWidth="61.0" />
+            <Spinner fx:id="endS" initialValue="0" layoutX="321.0" layoutY="286.0" max="59" min="0" prefHeight="26.0" prefWidth="61.0" />
+            <Spinner fx:id="end_M" initialValue="0" layoutX="215.0" layoutY="287.0" max="59" min="0" prefHeight="26.0" prefWidth="61.0" />
+            <ColorPicker fx:id="border" layoutX="99.0" layoutY="419.0" prefHeight="25.0" prefWidth="286.0" stylesheets="@stylemessagerie.css">
+               <styleClass>
+                  <String fx:value="color-picker" />
+                  <String fx:value="color-picker-color" />
+               </styleClass></ColorPicker>
+            <ColorPicker fx:id="text" layoutX="100.0" layoutY="460.0" prefHeight="27.0" prefWidth="286.0" />
+            <ColorPicker fx:id="backgound" layoutX="98.0" layoutY="374.0" prefHeight="27.0" prefWidth="286.0" promptText="Border Color" />
+            <Label layoutX="14.0" layoutY="251.0" text="Start Time" textFill="#1e1d1d">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="290.0" text="End Time" textFill="#050505">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font></Label>
+            <Label layoutX="15.0" layoutY="374.0" text="Background " textFill="#151515">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="422.0" text="Border Color" textFill="#151515">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font></Label>
+            <Button fx:id="add" layoutX="119.0" layoutY="501.0" mnemonicParsing="false" onAction="#addtoplan" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Add to plan" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="reset" layoutX="209.0" layoutY="501.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #009EF7;" text="Reset" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <ComboBox fx:id="place" layoutX="103.0" layoutY="330.0" prefHeight="25.0" prefWidth="279.0" promptText="Choose a place" />
+            <Button fx:id="update2" layoutX="286.0" layoutY="501.0" mnemonicParsing="false" onAction="#update2" style="-fx-background-color: #009EF7;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="add1" layoutX="332.0" layoutY="549.0" mnemonicParsing="false" onAction="#managesplaces" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Manage places" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Label layoutX="31.0" layoutY="390.0" text="colar" textFill="#151515">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="464.0" text="Text Color" textFill="#151515">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="80.0" layoutY="519.0" prefHeight="139.0" prefWidth="739.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <Button layoutX="640.0" layoutY="99.0" mnemonicParsing="false" onAction="#OnExport" style="-fx-background-color: #009EF7;" text="To do list " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="update1" layoutX="524.0" layoutY="101.0" mnemonicParsing="false" onAction="#ManageRating" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Manage Rating" textFill="#faf5f5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="update11" layoutX="14.0" layoutY="105.0" mnemonicParsing="false" onAction="#subscriberrate" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Consult Subscriber rate" textFill="#faf5f5">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="80.0" layoutY="36.0" prefHeight="121.0" prefWidth="739.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <Text fx:id="monthYearText" fill="#0d0d0d" layoutX="294.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month Year">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="229.0" layoutY="20.0" mnemonicParsing="false" onAction="#prevMonth" style="-fx-background-color: #009EF7; -fx-text-fill: white; -fx-background-radius: 5px; -fx-padding: 5px 10px;" text="Prev" textFill="#faf8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button layoutX="412.0" layoutY="20.0" mnemonicParsing="false" onAction="#nextMonth" style="-fx-background-color: #009EF7; -fx-text-fill: white; -fx-background-radius: 5px; -fx-padding: 5px 10px;" text="Next" textFill="#131212">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </children>
+      </Pane>
+      <FlowPane fx:id="calendar" layoutX="80.0" layoutY="90.0" prefHeight="485.0" prefWidth="739.0" style="-fx-background-color: white; -fx-padding: 10px; -fx-background-radius: 20px;" />
+      <StackPane fx:id="details" layoutX="284.0" layoutY="180.8" prefHeight="318.0" prefWidth="398.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="200.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="408.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+               <children>
+                  <Button fx:id="update" layoutX="127.0" layoutY="259.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Update" textFill="#faf5f5">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete" layoutX="241.0" layoutY="258.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Delete" textFill="#faf8f8">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+
+                  <Label layoutX="18.0" layoutY="98.0" text="Subscriber : ">
+                     <font>
+                        <Font name="System Bold" size="13.5" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="215.0" text="End           :">
+                     <font>
+                        <Font name="System Bold" size="13.5" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="136.0" text="Title           :">
+                     <font>
+                        <Font name="System Bold" size="13.5" />
+                     </font>
+                  </Label>
+                  <Label layoutX="225.0" layoutY="126.0" text="Description : ">
+                     <font>
+                        <Font name="System Bold" size="13.5" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="172.0" text="Start          :">
+                     <font>
+                        <Font name="System Bold" size="13.5" />
+                     </font>
+                  </Label>
+                  <Button fx:id="exit" layoutX="298.0" layoutY="-15.0" minWidth="44.0" mnemonicParsing="false" onAction="#handleExitButtonClick" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: none;" text="x" textFill="#c7b9b9">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="title" layoutX="104.0" layoutY="140.0" text="Label" />
+                  <Label fx:id="description" layoutX="226.0" layoutY="148.0" text="Label" />
+                  <Label fx:id="start" layoutX="104.0" layoutY="176.0" text="Label" />
+                  <Label fx:id="end" layoutX="100.0" layoutY="218.0" text="Label" />
+                  <Label layoutX="225.0" layoutY="100.0" text="place :">
+                     <font>
+                        <Font name="System Bold" size="13.5" />
+                     </font>
+                  </Label>
+                  <Label fx:id="placee" layoutX="272.0" layoutY="103.0" text="Label" />
+                  <Label fx:id="subscriber" layoutX="109.0" layoutY="102.0" text="Label" />
+                  <Label layoutX="122.6" layoutY="15.2" text="Workout Details" textFill="#009ef7" AnchorPane.leftAnchor="122.6" AnchorPane.topAnchor="15.2">
+                     <font>
+                        <Font name="Berlin Sans FB" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="manageplaces" prefHeight="467.0" prefWidth="524.0" AnchorPane.leftAnchor="850.0" AnchorPane.topAnchor="150.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="408.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+               <children>
+                  <Label text="Manage places" textFill="#009ef7" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="exit1" layoutX="432.0" layoutY="-19.0" minWidth="44.0" mnemonicParsing="false" onAction="#handleExitButtonClick" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: none;" text="x" textFill="#c7b9b9" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane layoutX="44.0" layoutY="40.0" prefHeight="377.0" prefWidth="447.0" style="-fx-background-color: white;" AnchorPane.topAnchor="80.0">
+                     <children>
+                        <TextField fx:id="placeTF" layoutX="54.0" layoutY="10.0" prefHeight="26.0" prefWidth="166.0" promptText="place" />
+                        <Button layoutX="230.0" layoutY="12.0" mnemonicParsing="false" onAction="#addplace" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #009EF7; -fx-background-radius: 5px;" stylesheets="@style.css" text="Add" textFill="#f2eeee">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ListView fx:id="placeListView" layoutX="53.0" layoutY="62.0" prefHeight="258.0" prefWidth="357.0" />
+                        <Button layoutX="293.0" layoutY="12.0" mnemonicParsing="false" onAction="#updateplace" style="-fx-background-color: #009EF7; -fx-background-radius: 5px;" text="Update" textFill="#f2eeee">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="360.0" layoutY="13.0" mnemonicParsing="false" onAction="#deleteplace" style="-fx-background-color: #009EF7; -fx-background-radius: 5px;" text="Dalete" textFill="#f2eeee">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="350.0" layoutY="335.0" mnemonicParsing="false" onAction="#deleteall" style="-fx-background-color: #009EF7; -fx-background-radius: 5px;" text="Delete All" textFill="#f2eeee">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="addcoachingrate" prefHeight="343.0" prefWidth="444.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="280.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="444.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+               <children>
+                  <Button fx:id="update3" layoutX="181.0" layoutY="255.0" mnemonicParsing="false" onAction="#confirmRate" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Confirm" textFill="#faf5f5">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="72.0" layoutY="149.0" text="your rate">
+                     <font>
+                        <Font name="System Bold" size="13.5" />
+                     </font>
+                  </Label>
+                  <Button fx:id="exit11" layoutX="336.0" layoutY="2.0" minWidth="44.0" mnemonicParsing="false" onAction="#handleExitButtonClick" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: none;" text="x" textFill="#c7b9b9">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="124.2" layoutY="15.2" text="Add Coaching Rate" textFill="#009ef7" AnchorPane.leftAnchor="124.2" AnchorPane.topAnchor="15.2">
+                     <font>
+                        <Font name="Berlin Sans FB" size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="-6.0" layoutY="78.0" prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="rate" layoutX="64.0" layoutY="192.0" prefHeight="26.0" prefWidth="331.0" promptText="Add your rate" />
+                  <CheckBox fx:id="star5" layoutX="375.0" layoutY="97.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="17.0" textFill="WHITE" />
+                  <CheckBox fx:id="star4" layoutX="292.0" layoutY="97.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="17.0" textFill="WHITE" />
+                  <CheckBox fx:id="star3" layoutX="209.0" layoutY="97.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="17.0" textFill="WHITE" />
+                  <CheckBox fx:id="star2" layoutX="126.0" layoutY="97.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="17.0" textFill="WHITE" />
+                  <CheckBox fx:id="star1" layoutX="44.0" layoutY="97.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="17.0" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="managecoachingrate" prefHeight="343.0" prefWidth="444.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="300.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="444.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+               <children>
+                  <Label layoutX="32.0" layoutY="162.0" text="your commante">
+                     <font>
+                        <Font name="System Bold" size="13.5" />
+                     </font>
+                  </Label>
+                  <Button fx:id="exit2" layoutX="343.0" minWidth="44.0" mnemonicParsing="false" onAction="#handleExitButtonClick" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: none;" text="x" textFill="#c7b9b9">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="112.0" layoutY="15.2" prefHeight="45.0" prefWidth="158.0" text=" Manage Your Rate" textFill="#009ef7" AnchorPane.leftAnchor="112.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="star_1" layoutX="59.0" layoutY="95.0" prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="star_4" layoutX="57.0" layoutY="89.0" prefHeight="36.0" prefWidth="303.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="star_3" layoutX="56.0" layoutY="92.0" prefHeight="36.0" prefWidth="303.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="star_2" layoutX="58.0" layoutY="93.0" prefHeight="36.0" prefWidth="303.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="star_5" layoutX="56.0" layoutY="87.0" prefHeight="36.0" prefWidth="303.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/yellowstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Label fx:id="commentaire1" layoutX="42.0" layoutY="190.0" text="Label" />
+                  <Button fx:id="update31" layoutX="128.0" layoutY="261.0" mnemonicParsing="false" onAction="#updateRate" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Update" textFill="#faf5f5">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="delete31" layoutX="205.0" layoutY="260.0" mnemonicParsing="false" onAction="#deleteRate" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Delete" textFill="#faf5f5">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <HBox fx:id="star_0" layoutX="54.0" layoutY="91.0" prefHeight="30.0" prefWidth="280.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagesghassen/grisstar.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image" fitHeight="811.0" fitWidth="582.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="900.0">
+         <image>
+            <Image url="@imagess/218.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

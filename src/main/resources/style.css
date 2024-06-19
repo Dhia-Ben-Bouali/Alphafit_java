@@ -1,0 +1,144 @@
+.principal{
+    -fx-background-color:#EAEEF4;
+}
+
+.side_ankerpane{
+     -fx-background-color: white;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color:#748CF1 ;
+}
+.inner_pane{
+    -fx-font-size: 14px;
+        -fx-padding: 8px 16px;
+        -fx-background-color: #EFF0F4; /* Light gray background */
+        -fx-text-fill: #000; /* Black text color */
+        -fx-border-radius: 15px;
+        -fx-border-color: #B2B1B9;
+        -fx-background-radius: 15px;
+        -fx-text-fill: Black; /* Text color */
+        -fx-font-size: 16px; /* Font size */
+        -fx-padding: 8px 16px; /* Padding around text */
+        -fx-font-family: "Ebrima", sans-serif;
+        -fx-font-weight: bold;
+}
+.most_inner_pane{
+    -fx-background-color: white ;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+}
+
+#btn_menu{
+     -fx-background-color:#141313;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #141313;
+}
+.edit_btn {
+  -fx-background-color: white;
+  -fx-border-width: 2px;
+  -fx-border-radius: 15px;
+  -fx-background-radius: 15px;
+  -fx-border-style: solid;
+  -fx-border-color: #6780E2;
+  -fx-text-fill: #6780E2; /* Text color */
+  -fx-font-size: 14px; /* Font size */
+  -fx-padding: 8px 16px; /* Padding around text */
+  -fx-font-family: "Ebrima", sans-serif;
+  -fx-font-weight: bold;
+}
+.admin_card_pane {
+  -fx-background-color: white;
+  -fx-border-width: 2px;
+  -fx-border-color: #ccc; /* Light gray border color */
+  -fx-border-radius: 5px;
+  -fx-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+  -fx-padding: 20px; /* Padding inside the pane */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+}
+
+.delete_btn {
+  -fx-font-size: 14px;
+  -fx-padding: 8px 16px;
+  -fx-background-color: #EF5350; /* Red background for delete button */
+  -fx-text-fill: #FFF; /* White text color */
+  -fx-border-radius: 5px;
+  -fx-cursor: hand; /* Cursor style */
+  -fx-background-radius: 15px;
+  -fx-text-fill: White; /* Text color */
+  -fx-font-size: 16px; /* Font size */
+  -fx-padding: 8px 16px; /* Padding around text */
+  -fx-font-family: "Ebrima", sans-serif;
+  -fx-font-weight: bold;
+}
+.delete_btn:hover {
+    -fx-background-color: #E57373; /* Darker red background on hover */
+}
+
+
+.delete_btn:pressed {
+    -fx-background-color: #C62828; /* Even darker red when pressed */
+}
+.label_name {
+  -fx-font-family: "Ebrima", sans-serif; /* Font family */
+  -fx-font-size: 14px; /* Font size */
+  -fx-text-fill: #333; /* Text color */
+}
+.text_style {
+    -fx-font-family: "Ebrima";
+    -fx-font-size: 14px;
+    -fx-fill: #333;
+}
+.btn_workbench11{
+    -fx-background-color: #009ef7;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #009ef7;
+    -fx-font-family: "Ebrima";
+    -fx-font-size: 14px;
+    -fx-fill: #333;
+    -fx-font-weight: bold;
+}
+.btn_workbench_logout{
+    -fx-background-color: #009ef7;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #009ef7;
+    -fx-font-family: "Ebrima";
+    -fx-font-size: 14px;
+    -fx-fill: #333;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+/* Style for ListView */
+.list-view {
+    -fx-font-size: 14px;
+    -fx-background-color: #EAEEF4; /* White background */
+    -fx-control-inner-background: #EAEEF4; /* White background for inner controls */
+    -fx-border-color: #CCCCCC; /* Light gray border color */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+/* Selected item style */
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #74DBEF; /* Light blue background for selected item */
+
+}
+
+/* Hover effect for items */
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #EFF0F4; /* Light gray background on hover */
+}
+/* Style for TextField */

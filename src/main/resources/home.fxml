@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomePageController">
+    <!-- Background Image -->
+    <ImageView fitHeight="696.0" fitWidth="1500.0" focusTraversable="true">
+        <image>
+            <Image url="@image/441122427_397200153314447_333195963561176277_n.jpg" />
+        </image>
+    </ImageView>
+    <!-- Navigation Bar -->
+    <HBox alignment="CENTER_RIGHT" layoutX="520" layoutY="10" spacing="10" />
+    <!-- Overlay Text and Button -->
+    <VBox alignment="CENTER_LEFT" layoutX="584.0" layoutY="27.0" prefHeight="121.0" prefWidth="435.0" spacing="20">
+        <Label prefHeight="8.0" prefWidth="369.0" styleClass="hero-text" text="The personal coach in your pocket:" />
+        <Label prefHeight="0.0" prefWidth="346.0" styleClass="hero-text" text="When, where and how you want." />
+    </VBox>
+   <ImageView fitHeight="42.0" fitWidth="36.0" layoutX="30.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@image/370318541_6645120922230246_5910000804689221571_n.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="53.0" fitWidth="36.0" layoutX="30.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@image/380157069_873012487546127_4108185629786938638_n.png" />
+      </image>
+   </ImageView>
+   <Text fill="WHITE" layoutX="30.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="JOIN US :" wrappingWidth="116.0126953125">
+      <font>
+         <Font name="Ebrima Bold" size="23.0" />
+      </font>
+   </Text>
+   <Text fill="WHITE" layoutX="79.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Facebook.com/AlphaFit">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Text>
+   <Text fill="WHITE" layoutX="76.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instagram.com/AlphaFit">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Text>
+   <StackPane fx:id="chatbot" layoutX="1067.0" layoutY="242.0" prefHeight="318.0" prefWidth="398.0">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <effect>
+         <DropShadow />
+      </effect>
+      <children>
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="408.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+            <children>
+               <Label layoutX="122.6" layoutY="15.2" text="ChatBot Assistance" textFill="#009ef7" AnchorPane.leftAnchor="122.6" AnchorPane.topAnchor="15.2">
+                  <font>
+                     <Font name="Berlin Sans FB" size="24.0" />
+                  </font>
+               </Label>
+               <ScrollPane fx:id="questionScrollPane" hbarPolicy="NEVER" layoutX="13.0" layoutY="64.0" prefWidth="370.0" vbarPolicy="NEVER">
+                  <content>
+                     <TextArea fx:id="question" prefHeight="62.0" prefWidth="370.0" promptText="Type your question..." />
+                  </content>
+               </ScrollPane>
+               <ScrollPane fx:id="answerScrollPane" hbarPolicy="NEVER" layoutX="17.0" layoutY="188.0" prefWidth="363.0" vbarPolicy="NEVER">
+                  <content>
+                     <TextArea fx:id="answer" prefHeight="86.0" prefWidth="369.0" promptText="typing your answer" />
+                  </content>
+               </ScrollPane>
+               <Button fx:id="update" layoutX="17.0" layoutY="140.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #009EF7; -fx-background-radius: 5;" text="Take Respone" textFill="#faf5f5">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Button>
+               <Button fx:id="exit2" layoutX="-16.0" layoutY="-5.0" minWidth="44.0" mnemonicParsing="false" onAction="#handleExitButtonClick" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: none;" text="x" textFill="#c7b9b9">
+                  <font>
+                     <Font size="30.0" />
+                  </font>
+               </Button>
+            </children>
+         </AnchorPane>
+      </children>
+   </StackPane>
+   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1329.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@imagesghassen/img.png" />
+      </image>
+   </ImageView>
+   <Button fx:id="openchat" layoutX="1352.0" layoutY="135.0" mnemonicParsing="false" onAction="#handlechatbot" prefHeight="86.0" prefWidth="103.0" style="-fx-background-color: none;" text="+" />
+   <Label layoutX="1291.0" layoutY="88.0" prefHeight="27.0" prefWidth="188.0" text="ChatBot Assistance" textFill="#009ef7">
+      <font>
+         <Font name="Berlin Sans FB" size="22.0" />
+      </font>
+   </Label>
+   <stylesheets>
+      <URL value="@styles.css" />
+      <URL value="@css/styles.css" />
+   </stylesheets>
+</AnchorPane>

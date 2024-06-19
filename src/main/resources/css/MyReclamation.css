@@ -1,3 +1,4 @@
+
 .root {
     -fx-background-color: #ffffff;
 }
@@ -41,16 +42,4 @@
 .content {
     /* Additional styles for content within the cards can be added here */
     color: #666; /* Example content color */
-}
-
-
-.Button {
-    -fx-background-color: linear-gradient(to bottom, #016A91, #014A63);
-    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
-    -fx-pref-width: 150; /* Wider button */
-    -fx-font-size: 1.5em;
-    -fx-font-family: "Calibri Light";
-    -fx-text-fill: #FFFFFF;
-    -fx-padding: 10 20; /* Increase padding for better touch target */
-    -fx-cursor: hand; /* Hand cursor on hover */
 }

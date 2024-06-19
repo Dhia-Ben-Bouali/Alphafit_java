@@ -1,7 +1,9 @@
 package GUI;
 
-import Service.ServiceReclamation;
-import com.alphafit.alphafit.Reclamation;
+import entite.user;
+import services.LoggedInUserManager;
+import services.ServiceReclamation;
+import entite.Reclamation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,10 +25,13 @@ public class MyReclamationController {
 
     public void initialize() {
         ServiceReclamation = new ServiceReclamation();
-        afficherReclamations(4);
+        user loggedInUser = LoggedInUserManager.getInstance().getLoggedInUser();
+
+        afficherReclamations(loggedInUser.getId());
     }
 
     public void afficherReclamations(int userId) {
+
         List<Reclamation> reclamations = ServiceReclamation.getReclamationsByUser(userId);
         for (Reclamation reclamation : reclamations) {
             VBox vbox = new VBox();

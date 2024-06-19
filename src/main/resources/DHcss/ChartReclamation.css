@@ -1,0 +1,37 @@
+/* Styles pour l'AnchorPane */
+.anchor-pane {
+    background-color: #ffffff; /* Couleur de fond */
+}
+
+/* Styles pour le BarChart */
+.bar-chart {
+    -fx-bar-gap: 10; /* Espacement entre les barres */
+    -fx-category-gap: 20; /* Espacement entre les catégories */
+}
+
+/* Styles pour les barres */
+.chart-bar {
+    -fx-bar-fill: #016A91; /* Couleur des barres */
+    -fx-background-color: #016A91; /* Couleur de fond des barres */
+    -fx-border-color: #000000; /* Couleur de la bordure */
+    -fx-border-width: 1px; /* Largeur de la bordure */
+}
+
+/* Styles pour les légendes des barres */
+.chart-bar.legend-symbol {
+    -fx-background-color: #016A91; /* Couleur de fond des légendes */
+    -fx-background-radius: 5px; /* Rayon de la bordure */
+    -fx-padding: 5px; /* Espacement interne */
+}
+
+/* Styles pour les axes */
+.axis {
+    -fx-tick-label-fill: #333333; /* Couleur des étiquettes de graduation */
+}
+/* Styles pour le Text */
+.text {
+    -fx-font-size: 2.5em;
+    -fx-text-fill: #016A91;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+}

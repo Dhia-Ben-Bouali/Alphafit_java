@@ -1,32 +1,27 @@
 package GUI;
 
-import com.alphafit.alphafit.Abonnement;
-import com.alphafit.alphafit.Pack;
-import com.alphafit.alphafit.user;
+import entite.Abonnement;
+import entite.Pack;
+import entite.user;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
-import static Service.ServiceFA.genererPDF;
-import static Service.ServiceAbonnement.*;
-import static Service.ServiceUser.getCoaches;
-import static Service.ServiceUser.getNutrisionists;
+import static services.ServiceFA.genererPDF;
+import static services.ServiceAbonnement.*;
+import static services.userService.getCoaches;
+import static services.userService.getNutrisionists;
 
 public class AbonnementController {
 
@@ -54,45 +49,41 @@ public class AbonnementController {
     @FXML
     private TableView<Abonnement> Table;
 
-    @FXML
-    private Button btnStaff;
-
-
     public void initialize() {
         showAbonnement();
     }
 
     @FXML
     void AffecterStaff(ActionEvent event) throws SQLException {
-            List<user> coaches = getCoaches();
-            List<user> nutrisionists = getNutrisionists();
-            List<Abonnement> unassignedAbonnements = getUnassignedAbonnements();
+        List<user> coaches = getCoaches();
+        List<user> nutrisionists = getNutrisionists();
+        List<Abonnement> unassignedAbonnements = getUnassignedAbonnements();
 
-            if (coaches.isEmpty() || nutrisionists.isEmpty()) {
-                showAlertFaild("Failed","Warning: Not enough coaches, nutritionists");
-                return;
-            }
+        if (coaches.isEmpty() || nutrisionists.isEmpty()) {
+            showAlertFaild("Failed","Warning: Not enough coaches, nutritionists");
+            return;
+        }
 
-            if(unassignedAbonnements.isEmpty()){
-                showAlertFaild("Failed","Warning: No unassigned subscriptions for assignment.");
-                return;
-            }
+        if(unassignedAbonnements.isEmpty()){
+            showAlertFaild("Failed","Warning: No unassigned subscriptions for assignment.");
+            return;
+        }
 
-            Random random = new Random();
+        Random random = new Random();
 
-            for (Abonnement abonnement : unassignedAbonnements) {
-                int coachIndex = random.nextInt(coaches.size());
-                user coach = coaches.get(coachIndex);
-                //System.out.println(coach);
+        for (Abonnement abonnement : unassignedAbonnements) {
+            int coachIndex = random.nextInt(coaches.size());
+            user coach = coaches.get(coachIndex);
+            //System.out.println(coach);
 
-                int nutritionistIndex = random.nextInt(nutrisionists.size());
-                user nutritionist = nutrisionists.get(nutritionistIndex);
-                //System.out.println(nutritionist);
-                UpdateAbonnement(abonnement.getId(),coach,nutritionist);
+            int nutritionistIndex = random.nextInt(nutrisionists.size());
+            user nutritionist = nutrisionists.get(nutritionistIndex);
+            //System.out.println(nutritionist);
+            UpdateAbonnement(abonnement.getId(),coach,nutritionist);
 
-            }
-            showAbonnement();
-            showAlertsucces("Succes", "Staff assignments completed for unassigned subscriptions");
+        }
+        showAbonnement();
+        showAlertsucces("Succes", "Staff assignments completed for unassigned subscriptions");
     }
 
     @FXML
@@ -147,7 +138,7 @@ public class AbonnementController {
         col_pack.setCellValueFactory(cellData -> {
             Abonnement abonnement = cellData.getValue();
             Pack pack = abonnement.getPack();
-            return new SimpleStringProperty(pack != null ? pack.getNom() : "");
+            return new SimpleStringProperty(pack != null ? pack.getName() : "");
         });
     }
 
@@ -157,15 +148,6 @@ public class AbonnementController {
         showAlertsucces("Succes","Le PDF des abonnements a été généré avec succès.");
     }
 
-
-    @FXML
-    void NavigateStaff(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Fxml/StaffAbonnement.fxml"));
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Staff");
-        stage.show();
-    }
     private void showAlertsucces(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
@@ -181,8 +163,6 @@ public class AbonnementController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
-
 }
 
 

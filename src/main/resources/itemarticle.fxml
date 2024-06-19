@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane onMousePressed="#click" prefHeight="145.0" prefWidth="1299.0" stylesheets="@/css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.itemarticleController">
+    <children>
+        <VBox alignment="TOP_CENTER" layoutX="63.0" layoutY="8.0" prefHeight="145.0" prefWidth="878.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox prefHeight="125.0" prefWidth="799.0" spacing="15.0">
+                    <children>
+                        <ImageView fx:id="img" fitHeight="100.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true" /> <!-- Espaceur avec une largeur fixe de 20 -->
+
+                        <Label fx:id="name" prefHeight="49.0" prefWidth="134.0" text="Nom">
+                            <font>
+                                <Font name="Cambria" size="20.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="15.0" top="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="des" prefHeight="49.0" prefWidth="288.0" text="Description">
+                            <font>
+                                <Font name="Cambria" size="20.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets top="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="prix" prefHeight="49.0" prefWidth="62.0" text="Prix">
+                            <font>
+                                <Font name="Cambria Bold" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets top="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="quan" prefHeight="49.0" prefWidth="72.0" text="Quantite">
+                            <font>
+                                <Font name="Cambria" size="20.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets top="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="cat" prefHeight="49.0" prefWidth="183.0" text="categorie">
+                            <font>
+                                <Font name="Cambria" size="20.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets top="30.0" />
+                            </HBox.margin>
+                        </Label>
+
+                        <HBox prefHeight="125.0" prefWidth="205.0" spacing="10.0">
+                            <Button fx:id="updtButton" onAction="#handleUpdateButtonClicked" text="Update"  />
+                            <Button fx:id="delButton" onAction="#handleDeleteButtonClicked" text="Delete"  />
+
+                            <HBox.margin>
+                                <Insets top="40.0" />
+                            </HBox.margin>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+    <styleClass>
+        <String fx:value="fruit-item" />
+        <String fx:value="shadow" />
+    </styleClass>
+</AnchorPane>

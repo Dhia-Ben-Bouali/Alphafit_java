@@ -1,0 +1,89 @@
+.title {
+    -fx-font-size: 2.5em;
+    -fx-text-fill: #016A91;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+}
+
+.form-container {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+    -fx-alignment: center;
+}
+
+.form-container Label {
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #444444;
+}
+
+.form-container TextField,
+.form-container ComboBox,
+.form-container DatePicker,
+.form-container TextArea {
+    -fx-pref-height: 40px;
+    -fx-pref-width: 300px;
+    -fx-background-color: #ffffff;
+    -fx-font-size: 1.3em;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-padding: 5px;
+}
+
+.form-container Button {
+    -fx-background-color: linear-gradient(to bottom, #016A91, #014A63);
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-pref-width: 150px;
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+}
+
+.Text {
+    -fx-font-size: 1.5em;
+    -fx-text-fill: #016A91;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+}
+
+.button-bar {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER;
+}
+
+.button-bar .button {
+    -fx-background-color: rgba(76, 175, 80, 0);
+    -fx-text-fill: #1a63b9;
+    -fx-font-size: 20px;
+    -fx-padding: 8 12;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+#MyRecButton {
+    -fx-text-fill: #007bff;
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial", sans-serif;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+
+#MyRecButton:hover {
+    -fx-text-fill: #0056b3;
+}
+
+.form-container Button:hover {
+    -fx-background-color: linear-gradient(to bottom, #014A63, #012D3A);
+}
+
+.button-bar .button:pressed {
+    -fx-background-color: #3c49ce;
+}

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1257.0" style="-fx-background-color: white; -fx-border-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.listusersController">
+    <children>
+      <Button fx:id="downloadPDFButton" onAction="#handleDownloadPDFButtonClick" layoutX="917.0" layoutY="290.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="88.0" style="-fx-background-radius: 100; -fx-background-color: #009EF7;" text="PDF" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="trirole" layoutX="1015.0" layoutY="287.0" prefHeight="37.0" prefWidth="74.0" style="-fx-background-color: #009EF7; -fx-background-radius: 50;" />
+      <Label layoutX="503.0" layoutY="293.0" text="List Users" textFill="#009ef7">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="filterField" focusTraversable="false" layoutX="674.0" layoutY="295.0" promptText="search" scaleShape="false" style="-fx-border-radius: 25; -fx-focus-traversable: false;">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <Button fx:id="addButton" layoutX="1109.0" layoutY="286.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="88.0" style="-fx-background-radius: 100; -fx-background-color: #009EF7;" text="Add" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+
+        <ComboBox fx:id="menuComboBox" layoutX="1132.0" layoutY="27.0" prefHeight="30.0" prefWidth="44.0" style="-fx-background-color: #009EF7; -fx-border-radius: 15; -fx-background-radius: 15; -fx-border-color: none;">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+
+                    <String fx:value="Logout" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <HBox fx:id="statisticsLayout" layoutX="36.0" layoutY="57.0" prefHeight="222.0" prefWidth="446.0" />
+      <ListView fx:id="liste" layoutX="510.0" layoutY="343.0" prefHeight="419.0" prefWidth="708.0" style="-fx-border-color: blue;" AnchorPane.leftAnchor="510.0" AnchorPane.topAnchor="343.0" />
+
+      <AnchorPane fx:id="addUserForm" layoutX="645.0" layoutY="295.0" prefHeight="379.0" prefWidth="490.0" style="-fx-border-color: blue; -fx-background-color: rgba(0,158,247,0.24); -fx-background-radius: 50; -fx-border-radius: 50;">
+         <children>
+             <StackPane layoutX="121.0" layoutY="31.0" prefHeight="278.0" prefWidth="256.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                 <opaqueInsets>
+                     <Insets left="250.0" top="50.0" />
+                 </opaqueInsets>
+                 <children>
+                     <VBox prefHeight="322.0" prefWidth="314.0">
+                         <children>
+                             <Label prefHeight="18.0" prefWidth="256.0" text="Register" textFill="#009ef7">
+                                 <padding>
+                                     <Insets left="90.0" />
+                                 </padding>
+                                 <font>
+                                     <Font name="System Bold Italic" size="19.0" />
+                                 </font>
+                             </Label>
+      
+                                   <!-- Separator -->
+                             <StackPane prefHeight="203.0" prefWidth="256.0">
+                                 <children>
+                                     <VBox alignment="CENTER" prefHeight="222.0" prefWidth="256.0" style="-fx-background-color: white;" StackPane.alignment="TOP_CENTER">
+                                         <children>
+                                             <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                 <items>
+                                                     <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                             <TextField fx:id="nomform" promptText="first name" />
+                                                             <Label fx:id="nomError" />
+                                                         </children>
+                                                     </VBox>
+                                                     <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                             <TextField fx:id="prenomform" promptText="last name" />
+                                                             <Label fx:id="prenomError" />
+                                                         </children>
+                                                     </VBox>
+                                                 </items>
+                                                 <opaqueInsets>
+                                                     <Insets />
+                                                 </opaqueInsets>
+                                                 <VBox.margin>
+                                                     <Insets left="10.0" right="10.0" />
+                                                 </VBox.margin>
+                                             </SplitPane>
+                                             <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                 <items>
+                                                     <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                             <TextField fx:id="adresseform" promptText="adresse" />
+                                                             <Label fx:id="adresseError" />
+                                                         </children>
+                                                     </VBox>
+                                                     <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                             <TextField fx:id="emailform" promptText="Email" />
+                                                             <Label fx:id="emailError" />
+                                                         </children>
+                                                     </VBox>
+                                                 </items>
+                                                 <VBox.margin>
+                                                     <Insets left="10.0" right="10.0" />
+                                                 </VBox.margin>
+                                             </SplitPane>
+                                             <SplitPane dividerPositions="0.5017123287671234" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                 <VBox.margin>
+                                                     <Insets left="10.0" right="10.0" />
+                                                 </VBox.margin>
+                                                 <items>
+                                                     <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                             <PasswordField fx:id="passwordform" promptText="password" />
+                                                             <Label fx:id="passwordError" />
+                                                         </children>
+                                                     </VBox>
+                                                     <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                             <PasswordField fx:id="confirmpasswordform" promptText="confirm password" />
+                                                             <Label fx:id="confirmpasswordError" />
+                                                         </children>
+                                                     </VBox>
+                                                 </items>
+                                             </SplitPane>
+      
+                                                   <!-- Additional Text -->
+                                             <StackPane prefHeight="52.0" prefWidth="600.0">
+                                                 <children>
+                                                     <SplitPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                                         <StackPane.margin>
+                                                             <Insets left="20.0" top="5.0" />
+                                                         </StackPane.margin>
+                                             <items>
+                                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <TextField fx:id="salireform" prefHeight="26.0" prefWidth="135.0" promptText="Salary" />
+                                                       <ComboBox fx:id="roleChoiceBox" prefHeight="29.0" prefWidth="113.0" promptText="Select Role" style="-fx-background-radius: 50;">
+                                                           <items>
+                                                               <FXCollections fx:factory="observableArrayList">
+                                                                   <String fx:value="ROLE_COACH" />
+                                                                   <String fx:value="ROLE_NUTRITIONIST" />
+                                                               </FXCollections>
+                                                           </items>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                       </ComboBox>
+
+                                                         </children>
+                                                </VBox>
+                                             </items>
+                                                     </SplitPane>
+                                                 </children>
+                                             </StackPane>
+                                         </children>
+                                 <StackPane.margin>
+                                    <Insets />
+                                 </StackPane.margin>
+                                     </VBox>
+                                 </children>
+                             </StackPane>
+                                 <Button id="register" fx:id="register" mnemonicParsing="false" onAction="#handleRegisterButtonClick" onMouseClicked="#handleRegisterButtonClick" onTouchPressed="#handleRegisterButtonClick" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: #009EF7; -fx-background-radius: 50;" text="Register" textFill="WHITE">
+                                     <VBox.margin>
+                                         <Insets left="80.0" right="5.0" top="5.0" />
+                                     </VBox.margin>
+                                 </Button>
+                         </children>
+                     </VBox>
+                 </children>
+             </StackPane>
+             <Button fx:id="exit" layoutX="387.0" layoutY="24.0" minWidth="44.0" mnemonicParsing="false" onAction="#handleExitButtonClick" prefHeight="30.0" prefWidth="44.0" style="-fx-background-color: none;" />
+            <Line endX="-80.0" endY="-22.199996948242188" layoutX="502.0" layoutY="55.0" startX="-97.0" startY="-9.000015258789062" stroke="BLUE" />
+            <Line endX="-80.29290771484375" endY="-18.292922973632812" layoutX="503.0" layoutY="65.0" startX="-99.0" startY="-32.5999870300293" stroke="BLUE" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="updateUserForm" layoutX="36.0" layoutY="344.0" prefHeight="419.0" prefWidth="446.0" style="-fx-background-color: #009EF7; -fx-background-radius: 50; -fx-border-radius: 50;">
+         <children>
+            <Button id="register" fx:id="update" layoutX="153.0" layoutY="330.0" mnemonicParsing="false" onAction="#updateUser" onMouseClicked="#handleRegisterButtonClick" onTouchPressed="#handleRegisterButtonClick" prefHeight="34.0" prefWidth="122.0" style="-fx-background-color: white; -fx-background-radius: 50;" text="Update" textFill="#009ef7" />
+            <TextField fx:id="salireformupdate" layoutX="227.0" layoutY="257.0" prefHeight="26.0" prefWidth="159.0" promptText="Salary" />
+            <ComboBox fx:id="roleChoiceBoxupdate" layoutX="43.0" layoutY="268.0" prefHeight="29.0" prefWidth="113.0" promptText="Select Role" style="-fx-background-radius: 50;">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="ROLE_COACH" />
+                     <String fx:value="ROLE_NUTRITIONIST" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <Label layoutX="86.0" layoutY="13.0" prefHeight="18.0" prefWidth="256.0" text="Update" textFill="WHITE">
+               <padding>
+                  <Insets left="90.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <VBox layoutX="29.0" layoutY="61.0" prefHeight="66.0" prefWidth="159.0">
+               <children>
+                  <TextField fx:id="nomformupdate" promptText="first name" />
+                  <Label fx:id="nomErrorupdate" />
+               </children>
+            </VBox>
+            <VBox layoutX="229.0" layoutY="63.0" prefHeight="62.0" prefWidth="159.0">
+               <children>
+                  <TextField fx:id="prenomformupdate" promptText="last name" />
+                  <Label fx:id="prenomErrorupdate" />
+               </children>
+            </VBox>
+            <VBox layoutX="29.0" layoutY="128.0" prefHeight="56.0" prefWidth="159.0">
+               <children>
+                  <TextField fx:id="adresseformupdate" promptText="adresse" />
+                  <Label fx:id="adresseErrorupdate" />
+               </children>
+            </VBox>
+            <VBox layoutX="229.0" layoutY="127.0" prefHeight="62.0" prefWidth="159.0">
+               <children>
+                  <TextField fx:id="emailformupdate" promptText="Email" />
+                  <Label fx:id="emailErrorupdate" />
+               </children>
+            </VBox>
+            <VBox layoutX="29.0" layoutY="194.0" prefHeight="66.0" prefWidth="159.0">
+               <children>
+                  <PasswordField fx:id="passwordformupdate" promptText="password" />
+                  <Label fx:id="passwordErrorupdate" />
+               </children>
+            </VBox>
+            <VBox layoutX="229.0" layoutY="190.0" prefHeight="54.0" prefWidth="159.0">
+               <children>
+                  <PasswordField fx:id="confirmpasswordformupdate" promptText="confirm password" />
+                  <Label fx:id="confirmpasswordErrorupdate" />
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.2800000011920929" green="0.5080000162124634" blue="1.0" opacity="0.7933434247970581" />
+               </color></DropShadow>
+         </effect>
+      </AnchorPane>
+
+    </children>
+</AnchorPane>

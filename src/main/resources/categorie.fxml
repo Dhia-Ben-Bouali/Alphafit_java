@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="790.0" prefWidth="1257.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CategorieController">
+    <children>
+        <VBox layoutX="26.0" layoutY="213.0" prefHeight="192.0" prefWidth="239.0" spacing="15.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="213.0">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="libelle" wrappingWidth="68.744140625">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Text>
+                <TextField fx:id="tflabelle" prefHeight="18.0" prefWidth="31.0" />
+                <Label fx:id="labellerror" />
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="270.0" spacing="10" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="65.0" />
+        <ListView fx:id="liste" layoutX="378.0" layoutY="113.0" onMouseClicked="#handleListViewClick" prefHeight="428.0" prefWidth="531.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="113.0" />
+
+        <Label layoutX="243.0" layoutY="14.0" prefHeight="42.0" prefWidth="304.0" text="Liste des Categories">
+         <font>
+            <Font name="Baskerville Old Face" size="36.0" />
+         </font></Label>
+        <Separator layoutX="375.0" layoutY="170.0" orientation="VERTICAL" prefHeight="314.0" prefWidth="1.0" />
+        <ButtonBar layoutX="99.0" layoutY="590.0" prefHeight="153.0" prefWidth="557.0">
+            <buttons>
+                <Button fx:id="btnSave" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" onAction="#createCategorie" prefHeight="31.0" prefWidth="118.0" styleClass="insert-button" stylesheets="@css/styles.css" text="Save" />
+                <Button fx:id="btnUpdate" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" onAction="#updateCatgorie" prefHeight="31.0" prefWidth="146.0" styleClass="insert-button" stylesheets="@css/styles.css" text="Update" />
+                <Button fx:id="btnDelete" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteCategorie" prefHeight="31.0" styleClass="insert-button" stylesheets="@css/styles.css" text="Delete" />
+                <Button fx:id="btnClear" layoutX="200.0" layoutY="18.0" mnemonicParsing="false" onAction="#clearCategorie" prefHeight="31.0" styleClass="insert-button" stylesheets="@css/styles.css" text="Clear" />
+            </buttons>
+        </ButtonBar>
+          <Button layoutX="238.0" layoutY="103.0" onAction="#sortAscending" styleClass="insert-button" stylesheets="@css/styles.css" text="Trier Ascendant" />
+          <Button layoutX="392.0" layoutY="104.0" onAction="#sortDescending" styleClass="insert-button" stylesheets="@css/styles.css" text="Trier Descendant" />
+    </children>
+</AnchorPane>

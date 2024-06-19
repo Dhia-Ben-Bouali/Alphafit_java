@@ -1,0 +1,74 @@
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-color: #f5f5f5; /* Light gray background */
+    -fx-border-color: #ccc; /* Light gray border color */
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+}
+
+/* Style for JFXTextArea */
+.text-area {
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-color: #f5f5f5; /* Light gray background */
+    -fx-border-color: #ccc; /* Light gray border color */
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+}
+
+/* Hover effect for both TextField and JFXTextArea */
+.text-field:hover, .text-area:hover {
+    -fx-background-color: #e0e0e0; /* Lighter gray background on hover */
+}
+
+/* Focus effect for both TextField and JFXTextArea */
+.text-field:focused, .text-area:focused {
+    -fx-background-color: #fff; /* White background on focus */
+    -fx-border-color: #2196f3; /* Blue border color on focus */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+/* Style for JFXButton */
+.jfx-button {
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-background-color: #EFF0F4; /* Light gray background */
+    -fx-text-fill: #000; /* Black text color */
+    -fx-border-radius: 5px;
+    -fx-cursor: hand; /* Cursor style */
+    -fx-background-radius: 15px;
+    -fx-text-fill: Black; /* Text color */
+      -fx-font-size: 16px; /* Font size */
+      -fx-padding: 8px 16px; /* Padding around text */
+      -fx-font-family: "Ebrima", sans-serif;
+      -fx-font-weight: bold;
+}
+
+/* Hover effect for JFXButton */
+.jfx-button:hover {
+    -fx-background-color: #1976d2; /* Darker blue background on hover */
+}
+
+/* Pressed effect for Button */
+.jfx-button:pressed {
+    -fx-background-color: #0d47a1; /* Even darker blue when pressed */
+}
+.jfx-radio-button .radio {
+    -fx-background-color: #0074E4; /* Background color when selected */
+    -fx-text-fill: white; /* Text color when selected */
+    -fx-border-color: #0074E4; /* Border color when selected */
+}
+
+/* Styling for the unselected radio button */
+.jfx-radio-button .radio .dot {
+    -fx-background-color: transparent; /* Background color when unselected */
+    -fx-border-color: #0074E4; /* Border color when unselected */
+}
+
+/* Styling for the label text of the radio button */
+.jfx-radio-button .label {
+    -fx-text-fill: #333333; /* Text color for the label */
+    -fx-font-family: "Ebrima"; /* Font family for the label text */
+    -fx-font-weight: bold; /* Font weight for the label text */
+}

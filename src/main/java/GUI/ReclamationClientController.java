@@ -1,6 +1,8 @@
 package GUI;
 
-import Service.ServiceReclamation;
+import entite.user;
+import services.LoggedInUserManager;
+import services.ServiceReclamation;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,13 +21,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Properties;
 import java.util.ResourceBundle;
-import javax.mail.*;
-import javax.mail.internet.*;
 
-import static Service.EmailSender.sendEmail;
-import static Service.ServiceUser.getUserNameById;
 
 public class ReclamationClientController implements Initializable {
 
@@ -53,7 +50,7 @@ public class ReclamationClientController implements Initializable {
     private TextField tuser;
 
     @FXML
-    private Hyperlink MyRecButton;
+    private Hyperlink  MyRecButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -64,63 +61,34 @@ public class ReclamationClientController implements Initializable {
         try {
             String contenu = tcontenu.getText();
             LocalDate date = tdate.getValue();
-            String ids = tuser.getText();
-            String name = getUserNameById(Integer.parseInt(ids));
-
 
             if (contenu.length() <= 10) {
                 labelcontenu.setText("Le contenu doit contenir plus de 10 caractères.");
-                highlightErrorFields(tcontenu, labelcontenu);
+                highlightErrorFields(tcontenu,labelcontenu);
                 resetFieldStylesWithDelay(tcontenu);
                 return;
             }
 
             if (date != null && !date.isBefore(LocalDate.now())) {
                 labeldate.setText("La date doit être dans le passé.");
-                highlightErrorFields(tdate.getEditor(), labeldate);
+                highlightErrorFields(tdate.getEditor(),labeldate);
                 resetFieldStylesWithDelay(tdate.getEditor());
                 return;
             }
-            String Msg = "<html><head><style>" +
-                    "body { font-family: Arial, sans-serif; }" +
-                    "header { background-color: #a6b3ff; color: #fff; padding: 10px 0; text-align: center; }" +
-                    "footer { background-color: #a6b3ff; color: #fff; padding: 10px 0; text-align: center; }" +
-                    "h1 { color: #007bff; font-size: 24px; text-align: center; }" +
-                    "p { color: #333; }" +
-                    "</style></head>" +
-                    "<body>" +
-                    "<header>" +
-                    "<h1>Reclamation Details</h1>" +
-                    "</header>" +
-                    "<p><strong>Hello <span style='color: #007bff; font-size: 18px;'>" + name + "</span>,</strong></p>" +
-                    "<p>New reclamation added with the following details:</p>" +
-                    "<ul>" +
-                    "<li><strong>Contenu:</strong> " + contenu + "</li>" +
-                    "<li><strong>Date:</strong> " + date.toString() + "</li>" +
-                    "</ul>" +
-                    "<footer style='background-color: #a6b3ff; color: #fff; padding: 10px 0; text-align: center;'>" +
-                    "<img src='/Img/alpha-removebg-preview.png' alt='Example Image' style='max-width: 100%;'>" +
-                    "<p>This is a footer.</p>" +
-                    "</footer>" +
-                    "</body></html>";
+            user loggedInUser = LoggedInUserManager.getInstance().getLoggedInUser();
 
-
-
-            ServiceReclamation.insertReclamation(tuser.getText(), "#", contenu, date);
-            highlightValidReclamation(labelvalide, hboxvalid);
-            sendEmail("boualidhia76@gmail.com","New Reclamation Added",Msg);
+            ServiceReclamation.insertReclamation(loggedInUser.getId(), "#", contenu, date);
+            highlightValidReclamation(labelvalide,hboxvalid );
             clear();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
     }
 
     @FXML
     void MyReclamation(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Fxml/MyReclamation.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/MyReclamation.fxml"));
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Client Reclamation");
@@ -163,22 +131,20 @@ public class ReclamationClientController implements Initializable {
 
 
     void highlightErrorFields(TextField textField, Label LabelField) {
-        textField.setStyle("-fx-border-color: red;");
-        ;
+        textField.setStyle("-fx-border-color: red;");;
         LabelField.setStyle("-fx-font-size: 15;");
         LabelField.setStyle("-fx-text-fill: red;");
 
     }
-
-    void highlightValidReclamation(Label LabelField, HBox VerticalBox) {
+    void highlightValidReclamation(Label LabelField, HBox VerticalBox){
         LabelField.setStyle("-fx-font-size: 15; -fx-text-fill: Green;");
         VerticalBox.setStyle("-fx-background-color: #8cff8c; -fx-background-radius: 30px;");
         LabelField.setText("La réclamation a été ajoutée avec succès.");
     }
 
 
-    void clear() {
-        tuser.setText(null);
+
+    void clear(){
         tcontenu.setText(null);
         tdate.setValue(null);
     }

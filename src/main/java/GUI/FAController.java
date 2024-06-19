@@ -1,6 +1,6 @@
 package GUI;
 
-import Service.ServiceReclamation;
+import services.ServiceReclamation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static Service.ServiceFA.getReclamationsByDay;
+import static services.ServiceFA.getReclamationsByDay;
 
 public class FAController {
 

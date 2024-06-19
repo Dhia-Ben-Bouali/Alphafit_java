@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="472.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CheckoutController">
+   <children>
+      <Text layoutX="303.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="firstName" layoutX="388.0" layoutY="74.0" styleClass="textfield-design" stylesheets="@css/styles.css" />
+      <Label fx:id="firstNameError" layoutX="390.0" layoutY="107.0" prefHeight="17.0" prefWidth="145.0" textFill="red" />
+      <Text layoutX="296.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="lastName" layoutX="388.0" layoutY="123.0" styleClass="textfield-design" stylesheets="@css/styles.css" />
+      <Label fx:id="lastNameError" layoutX="383.0" layoutY="156.0" prefHeight="17.0" prefWidth="189.0" textFill="red" />
+      <Text layoutX="314.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="address" layoutX="386.0" layoutY="173.0" styleClass="textfield-design" stylesheets="@css/styles.css" />
+      <Label fx:id="adressError" layoutX="389.0" layoutY="204.0" prefHeight="17.0" prefWidth="145.0" textFill="red" />
+      <ComboBox fx:id="paymentType" layoutX="388.0" layoutY="269.0" prefHeight="33.0" prefWidth="189.0" promptText="choisir.." styleClass="textfield-design" stylesheets="@css/styles.css" />
+      <Text layoutX="274.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="283.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Type">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Label fx:id="paymentTypeError" layoutX="388.0" layoutY="299.0" prefHeight="17.0" prefWidth="132.0" textFill="red" />
+      <Button layoutX="326.0" layoutY="404.0" mnemonicParsing="false" onAction="#handleSubmitButton" prefHeight="44.0" prefWidth="256.0" styleClass="insert-button" stylesheets="@css/styles.css" text="Submit" />
+      <Label alignment="CENTER" layoutX="231.0" layoutY="8.0" prefHeight="53.0" prefWidth="163.0" text="Checkout" textFill="#2211bf">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="image" fitHeight="188.0" fitWidth="224.0" layoutX="14.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/2.png" />
+         </image>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </ImageView>
+      <TextField fx:id="num_tel" layoutX="388.0" layoutY="220.0" styleClass="textfield-design" stylesheets="@css/styles.css" />
+      <Label fx:id="num_telError" layoutX="388.0" layoutY="253.0" prefHeight="17.0" prefWidth="132.0" textFill="red" />
+   </children>
+</AnchorPane>

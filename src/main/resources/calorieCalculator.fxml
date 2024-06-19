@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTogglePane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="696.0" prefWidth="1500.0" style="-fx-background-color: #eaeef6; -fx-padding: 15px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CalorieCalculatorController">
+   <children>
+      <Text id="heading" fill="#2595d1" layoutX="496.0" layoutY="77.0" styleClass="heading" text="Our Calorie Calculator" wrappingWidth="507.16986083984375">
+         <font>
+            <Font name="Ebrima Bold" size="48.0" />
+         </font>
+      </Text>
+      <Label id="description" layoutX="530.0" layoutY="89.0" styleClass="heading" text="We're happy to present you the calorie calculator we have!" textFill="#68696f">
+         <font>
+            <Font name="Ebrima" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="827.0" layoutY="158.0" prefHeight="25.0" prefWidth="67.0" text="Height:">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="height" layoutX="908.0" layoutY="151.0" prefHeight="38.0" prefWidth="149.0" promptText="in cm" stylesheets="@form.css" />
+      <Label fx:id="heightError" layoutX="908.0" layoutY="189.0" prefHeight="18.0" prefWidth="150.0" />
+      <Label layoutX="827.0" layoutY="214.0" prefHeight="25.0" prefWidth="67.0" text="Weight:">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="weight" layoutX="908.0" layoutY="207.0" prefHeight="38.0" prefWidth="149.0" promptText="in kg" stylesheets="@form.css" />
+      <Label fx:id="weightError" layoutX="908.0" layoutY="245.0" prefHeight="18.0" prefWidth="150.0" />
+      <Label layoutX="827.0" layoutY="270.0" prefHeight="25.0" prefWidth="67.0" text="Age:">
+         <font>
+            <Font name="Ebrima Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="age" layoutX="908.0" layoutY="263.0" prefHeight="38.0" prefWidth="149.0" promptText="age" stylesheets="@form.css" />
+      <Label fx:id="ageError" layoutX="908.0" layoutY="301.0" prefHeight="18.0" prefWidth="150.0" />
+      <JFXButton buttonType="RAISED" layoutX="824.0" layoutY="408.0" onAction="#handleCalculButtonClick" prefHeight="50.0" prefWidth="238.0" stylesheets="@form.css" text="Calculate" />
+      <Label fx:id="result" layoutX="824.0" layoutY="510.0" prefHeight="50.0" prefWidth="238.0" textFill="#2595d1">
+         <font>
+            <Font name="Ebrima Bold" size="23.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="401.0" fitWidth="447.0" layoutX="349.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagess/calorie.png" />
+         </image>
+      </ImageView>
+      <JFXTogglePane layoutX="851.0" layoutY="335.0" prefHeight="50.0" prefWidth="238.0">
+         <children>
+            <HBox>
+               <children>
+                  <JFXRadioButton fx:id="male" selected="true" style="-fx-label-padding: 10px;" text="Male">
+                     <selectedColor>
+                        <Color red="0.14509804546833038" green="0.5843137502670288" blue="0.8196078538894653" />
+                     </selectedColor>
+                     <font>
+                        <Font name="Ebrima Bold" size="18.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="female" style="-fx-label-padding: 10px;" text="Female">
+                     <selectedColor>
+                        <Color red="0.14509804546833038" green="0.5843137502670288" blue="0.8196078538894653" />
+                     </selectedColor>
+                     <font>
+                        <Font name="Ebrima Bold" size="18.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </HBox>
+         </children>
+      </JFXTogglePane>
+   </children>
+</AnchorPane>
